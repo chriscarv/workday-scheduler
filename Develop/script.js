@@ -1,9 +1,11 @@
+$(document).ready(function(){
 var showDay = document.getElementById("currentDay");
 var date = moment().format("MMM Do YY"); 
 //console.log(date)
 var currentHour = moment().format("H");
 //console.log(currentHour);
 showDay.textContent = date;
+
 $(".saveBtn").on("click",function(){
     //console.log("click");
     var task = $(this).siblings(".description").val().trim();
@@ -21,5 +23,27 @@ $("#hour15 .description").val(localStorage.getItem("hour15"));
 $("#hour16 .description").val(localStorage.getItem("hour16"));
 $("#hour17 .description").val(localStorage.getItem("hour17"));
 
+
+function timeColor () {
+      
+    $(".time-block").each(function () {
+      var testHour = parseInt($(this).attr("id").split("hour")[1]);
+      var holdTime = parseInt(currentHour);
+      console.log(testHour);
+      console.log(holdTime);
+        if (testHour > holdTime) {
+           $(this).addClass("past");
+        
+        } else if (testHour === holdTime) {
+            $(this).addClass("future");
+           
+        } else {
+           $(this).addClass("present");   
+        }
+    });
+  }
+
+    timeColor();
+  })
 
 
