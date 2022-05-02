@@ -24,7 +24,7 @@ $("#hour16 .description").val(localStorage.getItem("hour16"));
 $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 
-function timeColor () {
+function timeColor(){
       
     $(".time-block").each(function () {
       var testHour = parseInt($(this).attr("id").split("hour")[1]);
