@@ -31,10 +31,10 @@ function timeColor(){
       var holdTime = parseInt(currentHour);
       console.log(testHour);
       console.log(holdTime);
-        if (testHour > holdTime) {
+        if (testHour < holdTime) {
            $(this).addClass("past");
         
-        } else if (testHour === holdTime) {
+        } else if (testHour > holdTime) {
             $(this).addClass("future");
            
         } else {
